@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background-color: #f5f5f5;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 24px;
+    color: teal;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: teal;
+}
+/* /////////////////////////////////////////////////////////////////////////////////////// */
+.hero {
+    height: 90vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    color: white;
+
+    /* Image behavior */
+    background-size: cover;       /* fills screen */
+    background-position: center;  /* keeps it centered */
+    background-repeat: no-repeat; /* prevents tiling */
+}
+
+/* Gradient tint layer */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0,150,160,0.8),
+        rgba(100,200,150,0.7)
+    );
+    z-index: 1;
+}
+
+/* Make sure your text stays above the tint */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Content */
+.hero-content {
+    max-width: 500px;
+}
+
+.subtitle {
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background-color: #f5f5f5;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 24px;
+    color: teal;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: teal;
+}
+/* /////////////////////////////////////////////////////////////////////////////////////// */
+.hero {
+    height: 90vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    color: white;
+
+    /* Image behavior */
+    background-size: cover;       /* fills screen */
+    background-position: center;  /* keeps it centered */
+    background-repeat: no-repeat; /* prevents tiling */
+}
+
+/* Gradient tint layer */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0,150,160,0.8),
+        rgba(100,200,150,0.7)
+    );
+    z-index: 1;
+}
+
+/* Make sure your text stays above the tint */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Content */
+.hero-content {
+    max-width: 500px;
+}
+
+.subtitle {
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+/* Button */
+.hero-btn {
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 12px 30px;
+    color: white;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: white;
+    color: teal;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* Booking section (acts like spacer) */
+.booking {
+    position: relative;
+    height: 200px; /* adjust as needed */
+}
+
+/* The floating card */
+.booking-card {
+    position: absolute;
+    right: 80px;
+    top: -100px; /* THIS creates overlap */
+
+    background: #f2f2f2;
+    padding: 40px 50px;
+    width: 350px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Text styling */
+.booking-card h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.booking-card p {
+    color: gray;
+    margin-bottom: 25px;
+}
+
+/* Button */
+.book-btn {
+    display: inline-block;
+    background: #8bb52b;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Button */
+.hero-btn {
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 12px 30px;
+    color: white;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: white;
+    color: teal;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* Booking section (acts like spacer) */
+.booking {
+    position: relative;
+    height: 0px;
+}
+
+/* The floating card */
+.booking-card {
+    position: absolute;
+    right: 80px;
+    top: -100px; /* THIS creates overlap */
+
+    background: #f2f2f2;
+    padding: 40px 50px;
+    width: 350px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+    z-index: 3;
+}
+
+/* Text styling */
+.booking-card h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.booking-card p {
+    color: gray;
+    margin-bottom: 25px;
+}
+
+/* Button */
+.book-btn {
+    display: inline-block;
+    background: #8bb52b;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.about {
+    padding: 100px 80px;
+    background: #f9f9f9;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+/* LEFT SIDE IMAGES */
+.about-images {
+    position: relative;
+    width: 400px;
+}
+
+/* Main big image */
+.main-img {
+    width: 100%;
+    height: 500px;
+    background: url("images/Dental_chair_1.png") no-repeat center/cover;
+}
+
+/* Small overlapping image */
+.small-img {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+
+    width: 250px;
+    height: 300px;
+
+    background: url("images/Dr_rajni\ .png") no-repeat center/cover;
+
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.2); */
+}
+
+/* RIGHT SIDE CONTENT */
+.about-content {
+    max-width: 500px;
+}
+
+.about-content h2 {
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.about-content span {
+    font-weight: bold;
+}
+
+.highlight {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
