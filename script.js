@@ -26,7 +26,8 @@ setInterval(changeBackground, 4000);
 
 
 const slider = document.getElementById("slider");
-const afterImg = document.getElementById("afterImg");
+const before = document.getElementById("before");
+const after = document.getElementById("after")
 const container = document.getElementById("compare");
 
 let isDragging = false;
@@ -52,5 +53,6 @@ window.addEventListener("mousemove", (e) => {
     slider.style.left = x + "px";
 
     // reveal after image
-    afterImg.style.width = x + "px";
+    before.style.width = x + "px";
+    after.style.width = (rect.width - x) + "px";
 });

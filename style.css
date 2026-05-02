@@ -435,23 +435,41 @@
 /* Main wrapper */
 .compare {
     position: relative;
-    width: 100%;
+    width: 600px;
+    height: 300px;
     overflow: hidden;
+}
+
+.before,
+.after{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.before{
+    left:0;
+    width: 50%;
+}
+
+.after{
+    right: 0;
+    width: 50%;
 }
 
 /* Images */
 .compare img {
-    width: 100%;
-    display: block;
+    width: 600px;
+    height: 100%;
+    /* display: block; */
+    object-fit: cover;
 }
 
 /* AFTER image on top */
-.img-after {
+.after img {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%; /* initial position */
-    overflow: hidden;
+    right: 0;
 }
 
 /* Slider line */
