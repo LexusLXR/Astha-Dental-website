@@ -56,3 +56,5 @@ window.addEventListener("mousemove", (e) => {
     before.style.width = x + "px";
     after.style.width = (rect.width - x) + "px";
 });
+
+
