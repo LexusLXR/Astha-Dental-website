@@ -2,6 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
     font-family: Arial, sans-serif;
 }
 
@@ -14,6 +22,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+
     padding: 20px 60px;
     background-color: #f5f5f5;
 }
@@ -31,7 +41,7 @@
 }
 
 .logo-text {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     letter-spacing: 1px;
 }
@@ -55,6 +65,66 @@
     color: teal;
 }
 
+.hamburger{
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+
+    .navbar {
+        padding: 20px 30px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    /* SHOW HAMBURGER */
+    .hamburger {
+        display: block;
+    }
+
+    /* MOBILE MENU */
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+        background: #f5f5f5;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        padding: 0;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.4s ease;
+    }
+
+    /* ACTIVE MENU */
+    .nav-links.active {
+        max-height: 400px;
+        padding: 20px 0;
+    }
+}
+
 /* /////////////////////////////////////////////////////////////////////////////////////// */
 .hero {
     height: 90vh;
@@ -71,6 +141,7 @@
     /* keeps it centered */
     background-repeat: no-repeat;
     /* prevents tiling */
+    background-image:url(images/Dental_chair_1.png) ;
 }
 
 /* Gradient tint layer */
@@ -112,6 +183,7 @@
 
 /* Button */
 .hero-btn {
+    display: inline-block;
     text-decoration: none;
     border: 2px solid white;
     padding: 12px 30px;
@@ -125,6 +197,72 @@
     color: teal;
 }
 
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+
+    .hero {
+        padding: 0 40px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 80vh;
+        padding: 100px 20px 60px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .subtitle {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        line-height: 1.2;
+    }
+
+    .hero-btn {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 80px 15px 50px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 10px;
+    }
+
+    .hero-btn {
+        padding: 9px 20px;
+        font-size: 13px;
+    }
+}
+
 
 /* /////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -132,13 +270,14 @@
 .booking {
     position: relative;
     height: 0px;
+    z-index: 5;
 }
 
 /* The floating card */
 .booking-card {
     position: absolute;
     right: 80px;
-    top: -100px;
+    top: -120px;
     /* THIS creates overlap */
 
     background: #f2f2f2;
@@ -147,13 +286,14 @@
 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
-    z-index: 3;
+    z-index: 10;
 }
 
 /* Text styling */
 .booking-card h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 15px;
 }
 
 .booking-card p {
@@ -166,21 +306,101 @@
     display: inline-block;
     background: #8bb52b;
     color: white;
-    padding: 12px 25px;
+    padding: 12px 28px;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+.book-btn:hover{
+    background: #73991f;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+
+    .booking-card {
+        right: 40px;
+        width: 300px;
+
+        padding: 35px;
+    }
+
+    .booking-card h2 {
+        font-size: 38px;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .booking {
+        height: auto;
+    }
+
+    .booking-card {
+        position: relative;
+
+        top: -60px;
+        right: auto;
+
+        width: calc(100% - 40px);
+
+        margin: auto;
+
+        padding: 30px 25px;
+
+        text-align: center;
+    }
+
+    .booking-card h2 {
+        font-size: 34px;
+    }
+
+    .book-btn {
+        width: 100%;
+        padding: 14px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .booking-card {
+        top: -40px;
+
+        width: calc(100% - 30px);
+
+        padding: 25px 20px;
+    }
+
+    .booking-card h2 {
+        font-size: 28px;
+    }
+
+    .booking-card p {
+        font-size: 14px;
+    }
+
+    .book-btn {
+        font-size: 14px;
+    }
 }
 
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .about {
-    padding: 100px 80px;
+    padding: 120px 80px;
     background: #f9f9f9;
 }
 
 .about-container {
     display: flex;
     align-items: center;
+    /* justify-content: center; */
     gap: 80px;
 }
 
@@ -188,6 +408,7 @@
 .about-images {
     position: relative;
     width: 400px;
+    flex-shrink: 0;
 }
 
 /* Main big image */
@@ -219,9 +440,11 @@
 }
 
 .about-content h2 {
-    font-size: 42px;
+    font-size: 48px;
     font-weight: 300;
-    margin-bottom: 20px;
+    line-height: 1.2;
+
+    margin-bottom: 25px;
 }
 
 .about-content span {
@@ -239,16 +462,132 @@
     margin-bottom: 15px;
 }
 
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+
+    .about {
+        padding: 100px 40px;
+    }
+
+    .about-container {
+        gap: 50px;
+    }
+
+    .about-images {
+        width: 350px;
+    }
+
+    .main-img {
+        height: 450px;
+    }
+
+    .small-img {
+        width: 200px;
+        height: 250px;
+
+        right: -30px;
+        bottom: -30px;
+    }
+
+    .about-content h2 {
+        font-size: 40px;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .about {
+        padding: 80px 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+
+        gap: 60px;
+    }
+
+    .about-images {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .main-img {
+        height: 400px;
+    }
+
+    .small-img {
+        width: 180px;
+        height: 220px;
+
+        right: 50%;
+        transform: translateX(50%);
+
+        bottom: -40px;
+    }
+
+    .about-content {
+        max-width: 100%;
+    }
+
+    .about-content h2 {
+        font-size: 36px;
+    }
+
+    .highlight {
+        font-size: 16px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .about {
+        padding: 70px 15px;
+    }
+
+    .main-img {
+        height: 320px;
+    }
+
+    .small-img {
+        width: 140px;
+        height: 180px;
+
+        bottom: -30px;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
+    }
+
+    .highlight {
+        font-size: 15px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+    }
+}
+
+
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .about-2 {
     padding: 120px 80px;
     background: #f7f7f7;
+
+    overflow: hidden;
 }
 
 .about-2-container {
     display: flex;
     align-items: center;
+    /* justify-content: center; */
     gap: 80px;
 
     flex-direction: row-reverse;
@@ -257,6 +596,7 @@
 /* LEFT IMAGE */
 .about-2-image {
     position: relative;
+    flex-shrink: 0;
 }
 
 .about-2-image img {
@@ -290,6 +630,8 @@
 .about-2-content h2 {
     font-size: 48px;
     font-weight: 300;
+    line-height: 1.2;
+
     margin-bottom: 20px;
 }
 
@@ -305,11 +647,14 @@
 .highlight {
     color: #555;
     margin-bottom: 20px;
+
+    line-height: 1.7;
+    font-size: 18px;
 }
 
 .about-2-content p {
     color: #777;
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 15px;
 }
 
@@ -334,6 +679,141 @@
 .about-2-content::after {
     bottom: -40px;
     left: -60px;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+
+    .about-2 {
+        padding: 100px 40px;
+    }
+
+    .about-2-container {
+        gap: 50px;
+    }
+
+    .about-2-image img {
+        width: 350px;
+        height: 500px;
+    }
+
+    .about-2-content h2 {
+        font-size: 40px;
+    }
+
+    .highlight {
+        font-size: 16px;
+    }
+
+    .about-2-content::before {
+        right: -40px;
+    }
+
+    .about-2-content::after {
+        left: -30px;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .about-2 {
+        padding: 80px 20px;
+    }
+
+    .about-2-container {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 60px;
+    }
+
+    .about-2-image img {
+        width: 100%;
+        max-width: 350px;
+
+        height: 450px;
+    }
+
+    .about-2-image::before {
+
+        top: -20px;
+        left: -20px;
+
+        width: 110%;
+        height: 110%;
+    }
+
+    .about-2-content {
+        max-width: 100%;
+    }
+
+    .about-2-content h2 {
+        font-size: 36px;
+    }
+
+    .line {
+        margin: 20px auto;
+    }
+
+    .highlight {
+        font-size: 16px;
+    }
+
+    /* reposition floating squares */
+    .about-2-content::before {
+
+        width: 40px;
+        height: 40px;
+
+        top: -20px;
+        right: 20px;
+    }
+
+    .about-2-content::after {
+
+        width: 40px;
+        height: 40px;
+
+        bottom: -20px;
+        left: 20px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .about-2 {
+        padding: 70px 15px;
+    }
+
+    .about-2-image img {
+        height: 350px;
+    }
+
+    .about-2-content h2 {
+        font-size: 28px;
+    }
+
+    .highlight {
+        font-size: 15px;
+    }
+
+    .about-2-content p {
+        font-size: 14px;
+    }
+
+    .about-2-content::before,
+    .about-2-content::after {
+
+        width: 30px;
+        height: 30px;
+    }
 }
 
 /* //////////////////////////////////////////////////////////////////////// */
