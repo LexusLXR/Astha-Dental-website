@@ -1027,139 +1027,31 @@ body {
 
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 
-.compare-section {
-    padding: 100px 80px;
-    background: #f7f7f7;
-    display: flex;
-    justify-content: center;
-}
-
-.compare-container {
-    width: 600px;
-}
-
-/* Main wrapper */
-.compare {
+.compare-container{
     position: relative;
-    width: 600px;
-    height: 300px;
+    height: 200px;
+}
+
+.image{
+    position: absolute;
+    width: auto;
+    height: auto;
     overflow: hidden;
 }
-
-.before,
-.after {
+.image img{
+    display: block;
+    vertical-align: middle;
+}
+.img-slider{
     position: absolute;
-    top: 0;
-    height: 100%;
-    overflow: hidden;
-}
-
-.before {
-    left: 0;
-    width: 50%;
-}
-
-.after {
-    right: 0;
-    width: 50%;
-}
-
-/* Images */
-.compare img {
-    width: 600px;
-    height: 100%;
-    /* display: block; */
-    object-fit: cover;
-}
-
-/* AFTER image on top */
-.after img {
-    position: absolute;
-    right: 0;
-}
-
-/* Slider line */
-.slider {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 3px;
-    height: 100%;
-    background: white;
+    z-index: 9;
     cursor: ew-resize;
-}
 
-/* Slider circle */
-.slider::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: #2196F3;
+    opacity: 0.7;
     border-radius: 50%;
-    background: white;
-    border: 2px solid #ccc;
-}
-
-/* ================= TABLET ================= */
-
-@media (max-width: 1024px) {
-
-    .compare-section {
-        padding: 80px 40px;
-    }
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-
-    .compare-section {
-        padding: 70px 20px;
-    }
-
-    .compare {
-
-        aspect-ratio: 1.7 / 1;
-    }
-
-    .slider::after {
-
-        width: 26px;
-        height: 26px;
-    }
-}
-
-/* ================= SMALL MOBILE ================= */
-
-@media (max-width: 480px) {
-
-    .compare-section {
-        padding: 60px 15px;
-    }
-
-    .compare {
-
-        aspect-ratio: 1.5 / 1;
-
-        border-radius: 6px;
-    }
-
-    .slider {
-
-        width: 2px;
-    }
-
-    .slider::after {
-
-        width: 22px;
-        height: 22px;
-
-        border-width: 1px;
-    }
 }
 
 /* ///////////////////////////////////////////////////////// */

@@ -1,61 +1,80 @@
-// const images = [
-//     "images/Dental_chair_1.png",
-//     // "images/Dental_chair_2.png"
-// ];
+function initComparisons(){
+    var x, i;
+    x=document.getElementsByClassName("overlay")
 
-// let index = 0;
-// const hero = document.getElementById("hero");
+    for(i = 0; i< x.length; i++){
+        compareImages(x[i])
+    }
+}
 
-// function changeBackground() {
-//     hero.style.setProperty(
-//         "--bg-image",
-//         `url(${images[index]})`
-//     );
+function compareImages(img){
+    var slider, img, clicked = 0, w, h;
 
-//     hero.style.backgroundImage = `url(${images[index]})`;
+    w = img.offsetWidth;
+    h = img.offsetHeight;
 
-//     index = (index + 1) % images.length;
-// }
+    img.style.width = (w/2) + "px";
 
-// // initial load
-// changeBackground();
+    slider = document.createElement("DIV");
+    slider.setAttribute("class", "img-slider");
 
-// // change every 4 seconds
-// setInterval(changeBackground, 4000);
+    img.parentElement.insertBefore(slider, img);
 
+    slider.style.top = (h/2) - (slider.offsetHeight / 2) + "px";
+    slider.style.left = (w/2) - (slider.offsetWidth / 2) + "px";
 
+    slider.addEventListener("mousedown", slideReady);
+    window.addEventListener("mouseup", slideFinish);
 
-const slider = document.getElementById("slider");
-const before = document.getElementById("before");
-const after = document.getElementById("after")
-const container = document.getElementById("compare");
+    slider.addEventListener("touchstart", slideReady);
 
-let isDragging = false;
+    window.addEventListener("touchend", slideFinish);
 
-slider.addEventListener("mousedown", () => {
-    isDragging = true;
-});
+    function slideReady(e){
+        e.preventDefault();
 
-window.addEventListener("mouseup", () => {
-    isDragging = false;
-});
+        clicked = 1;
 
-window.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
+        window.addEventListener("mousemove", slideMove);
+        window.addEventListener("touchmove", slideMove);
+    }
 
-    const rect = container.getBoundingClientRect();
-    let x = e.clientX - rect.left;
+    function slideFinish(){
+        clicked = 0;
+    }
 
-    // limit inside container
-    x = Math.max(0, Math.min(x, rect.width));
+    function slideMove(e){
+        var pos;
 
-    // move slider
-    slider.style.left = x + "px";
+        if(clicked == 0) return false;
 
-    // reveal after image
-    before.style.width = x + "px";
-    after.style.width = (rect.width - x) + "px";
-});
+        pos = getCursorPos(e)
+
+        if (pos < 0) pos = 0;
+        if(pos > w) pos = w;
+
+        slide(pos);
+    }
+
+    function getCursorPos(e){
+        var a, x = 0;
+        e = (e.changedTouches) ? e.changedTouches[0] : e;
+
+        a = img.getBoundingClientRect();
+
+        x = e.pageX - a.left;
+
+        x = x - window.pageXOffset;
+        return x;
+    }
+    function slide(x){
+        img.style.width = x + "px";
+
+        slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px"
+    }
+}
+
+initComparisons();
 
 // hamburger logic
 
