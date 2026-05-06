@@ -57,7 +57,6 @@ window.addEventListener("mousemove", (e) => {
     after.style.width = (rect.width - x) + "px";
 });
 
-
 // hamburger logic
 
 const hamburger = document.getElementById("hamburger");
