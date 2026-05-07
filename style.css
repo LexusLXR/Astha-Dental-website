@@ -393,7 +393,7 @@ body {
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .about {
-    padding: 120px 80px;
+    padding: 170px 80px;
     background: #f9f9f9;
 }
 
@@ -467,7 +467,7 @@ body {
 @media (max-width: 1024px) {
 
     .about {
-        padding: 100px 40px;
+        padding: 150px 40px;
     }
 
     .about-container {
@@ -593,6 +593,19 @@ body {
     flex-direction: row-reverse;
 }
 
+.small-img-2 {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+
+    width: 250px;
+    height: 300px;
+
+    background: url("images/Salil_dentist.png") no-repeat center/cover;
+
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.2); */
+}
+
 /* LEFT IMAGE */
 .about-2-image {
     position: relative;
@@ -604,6 +617,7 @@ body {
     height: 600px;
     object-fit: cover;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
 }
 
 /* dotted pattern */
@@ -713,6 +727,14 @@ body {
     .about-2-content::after {
         left: -30px;
     }
+
+    .small-img-2 {
+        width: 200px;
+        height: 250px;
+
+        right: -30px;
+        bottom: -30px;
+    }
 }
 
 /* ================= MOBILE ================= */
@@ -782,6 +804,16 @@ body {
         bottom: -20px;
         left: 20px;
     }
+
+    .small-img-2 {
+        width: 180px;
+        height: 220px;
+
+        right: 50%;
+        transform: translateX(50%);
+
+        bottom: -40px;
+    }
 }
 
 /* ================= SMALL MOBILE ================= */
@@ -813,6 +845,13 @@ body {
 
         width: 30px;
         height: 30px;
+    }
+
+    .small-img-2 {
+        width: 140px;
+        height: 180px;
+
+        bottom: -30px;
     }
 }
 
@@ -1030,7 +1069,7 @@ body {
 .compare-section {
 
     /* width: 100%; */
-    
+
     /* display: flex; */
     /* justify-content: center; */
     /* horizontal center */
@@ -1040,7 +1079,8 @@ body {
     /* padding: 80px 20px; */
     background-color: #f7f7f7;
 }
-.compare{
+
+.compare {
     position: relative;
 
     width: 90%;
@@ -1050,7 +1090,8 @@ body {
 
     overflow: hidden;
 
-    margin: 0 auto;   /* THIS centers it */
+    margin: 0 auto;
+    /* THIS centers it */
 }
 
 .compare-container {
@@ -1088,18 +1129,18 @@ body {
 
 /* TABLET */
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-    .compare-section{
+    .compare-section {
         padding: 60px 15px;
     }
 
-    .compare{
+    .compare {
         width: 95%;
         border-radius: 15px;
     }
 
-    .img-slider{
+    .img-slider {
         width: 36px;
         height: 36px;
     }
@@ -1107,18 +1148,18 @@ body {
 
 /* MOBILE */
 
-@media (max-width: 480px){
+@media (max-width: 480px) {
 
-    .compare-section{
+    .compare-section {
         padding: 40px 10px;
     }
 
-    .compare{
+    .compare {
         width: 100%;
         border-radius: 12px;
     }
 
-    .img-slider{
+    .img-slider {
         width: 30px;
         height: 30px;
     }
@@ -1126,13 +1167,13 @@ body {
 
 /* SMALL MOBILE */
 
-@media (max-width: 360px){
+@media (max-width: 360px) {
 
-    .compare{
+    .compare {
         aspect-ratio: 4 / 3;
     }
 
-    .img-slider{
+    .img-slider {
         width: 26px;
         height: 26px;
     }
@@ -1272,7 +1313,7 @@ body {
 
         border-radius: 5px;
 
-        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
     }
 
     .address {
